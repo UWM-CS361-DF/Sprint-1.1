@@ -10,14 +10,8 @@ public class Channel{
 	public boolean trig(){
 		if(!isArmed)
 			return false;
-		else{
-			Time.systemTime.getRunningTime();
-			if(channelNo%2==0)
-				ChronoInterface.chronoTimer.event.finish();
-			else
-				ChronoInterface.chronoTimer.event.start();
-		}
-	return true;
+		else
+			return true;
 	}
 	public boolean tog(){
 		isArmed=!isArmed;

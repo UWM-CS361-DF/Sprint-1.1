@@ -25,6 +25,9 @@ public class Race {
 	}
 	public boolean newRun(){
 		if(!runInProgress){
+			startQueue.clear();
+			finishQueue.clear();
+			completed.clear();
 			runNum++;
 			runInProgress=true;
 			return runInProgress;
@@ -32,9 +35,6 @@ public class Race {
 		return !runInProgress;
 	}
 	public void endRun(){
-		startQueue.clear();
-		finishQueue.clear();
-		completed.clear();
 		runInProgress=false;
 	}
 	public void print(){
