@@ -53,7 +53,6 @@ public class Simulator {
 						stringInput=scIn.nextLine();
 						Time.systemTime.setTime();
 					}
-					System.out.println(stringInput);
 					if(stringInput.equals("EXIT")){
 						System.out.println("Exited Simulator");
 						buffer.close();
