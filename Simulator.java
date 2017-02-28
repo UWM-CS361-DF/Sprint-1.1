@@ -31,8 +31,8 @@ public class Simulator {
 		Scanner scIn;
 		String stringInput;
 		String stringTime;
-		Writer file;
-		BufferedWriter buffer;
+		Writer file= new FileWriter("Event Record.txt");
+		BufferedWriter buffer = new BufferedWriter(file);
 		
 		try{
 			if (args.length > 0 ){
@@ -56,14 +56,20 @@ public class Simulator {
 					System.out.println(stringInput);
 					if(stringInput.equals("EXIT")){
 						System.out.println("Exited Simulator");
+						buffer.close();
 						scIn.close();
 						break;
 					}
 					else if(stringInput.equals("RESET")){
 						ChronoInterface.chronoTimer=new ChronoInterface();
+						ChronoInterface.chronoTimer.power.powerStatus=true;
 						file= new FileWriter("Event Record.txt");
 						buffer = new BufferedWriter(file);
 					}
+					else if(stringInput.equals("POWER")&&!ChronoInterface.chronoTimer.power.powerStatus){
+						ChronoInterface.chronoTimer=new ChronoInterface();
+						ChronoInterface.chronoTimer.power();
+				}
 					else 
 						parse(stringInput);
 				}catch(Exception e){
