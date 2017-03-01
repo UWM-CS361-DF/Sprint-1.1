@@ -18,13 +18,13 @@ public class ChronoInterface {
 		System.out.println(power.power() ? "Power On" : "Power Off");		
 	}
 	public void time(String time){
-		if(power.power()){
+		if(power.powerStatus){
 			Time.systemTime.setTime(Time.systemTime.toSeconds(time));
 			System.out.println("Set Time to "+ Time.systemTime.toString(Time.systemTime.getRunningTime()));
 		}
 	}
 	public void dnf(){
-		if(power.power())
+		if(power.powerStatus)
 			race.dnf();
 	}
 	public void cancel(){
@@ -33,13 +33,12 @@ public class ChronoInterface {
 	}
 	public void tog(String channel){
 		if(power.powerStatus)
-			System.out.println(channels.get(Integer.parseInt(channel)).tog() ? "Channnel "+channel+" is Armed" : "Channnel "+channel+" is not Armed");
+			System.out.println(channels.get(Integer.parseInt(channel)).tog() ? "Channel "+channel+" is Armed" : "Channel "+channel+" is not Armed");
 	}
 	public void trig(String channel){
 		if(power.powerStatus)
 			if(channels.get(Integer.parseInt(channel)).trig()){
-				System.out.println("Triggered Channnel "+channel);
-				//Time.systemTime.getRunningTime();
+				System.out.println("Triggered Channel "+channel);
 				if(Integer.parseInt(channel)%2==0)
 					event.finish();
 				else
