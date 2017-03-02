@@ -5,8 +5,15 @@ import java.io.FileWriter;
 import java.io.Writer;
 import java.lang.reflect.Method;
 import java.util.Scanner;
-
+//**************************************************
+// The purpose of the simulator class is to take the
+// input from the test cases and disseminate to the 
+// appropriate ChronoInterface method. 
+//**************************************************
 public class Simulator {
+	// parse method takes the input passed from the input and calls the appropriate method 
+	//of the chronoTimer. The chronoTimer has a method for each expected string input. 
+	//All other input is considered "Illegal Input""
 	public static void parse(String lineInput) throws Exception{
 		
 		String[] input;
@@ -27,6 +34,8 @@ public class Simulator {
 		}
 	}
 	
+	//main method decides whether there is a file input or console input, 
+	//gathers the next line input and sends it to the parse method. 
 	public static void main(String[] args) throws Exception{
 		Scanner scIn;
 		String stringInput;
