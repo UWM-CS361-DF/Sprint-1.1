@@ -15,19 +15,19 @@ public class Time {
 	public void setTime(double time){
 		clock = time;
 	}
-	public double getClockTime(){
+	public double getClockTime(){//get current time
 		return clock;
 	}
-	public double getRunningTime(){
+	public double getRunningTime(){//get the race time
 		return clock;
 	}
-	public String toString(double time){
+	public String toString(double time){//parse to String format
 		int hour = (int) (time/3600);
 		int min = (int) ((time-hour*3600)/60);
 		double second = (double) (time-hour*3600-min*60);
 		return String.format("%02d", hour)+":"+String.format("%02d", min)+":"+String.format("%.2f",second);
 	}
-	public double toSeconds(String time){		
+	public double toSeconds(String time){//parse time to seconds format	
 		this.time= time.split(":");
 		hour=Integer.parseInt(this.time[0]);
 		minute=Integer.parseInt(this.time[1]);

@@ -7,20 +7,20 @@ public class Channel{
 		isArmed=false;
 	}
 	
-	public boolean trig(){
+	public boolean trig(){//judge whether the channels have been triggered
 		if(!isArmed)
 			return false;
 		else
 			return true;
 	}
-	public boolean tog(){
+	public boolean tog(){//toggle the channels states
 		isArmed=!isArmed;
 		return isArmed;
 	}
-	public void conn(String sensor){
+	public void conn(String sensor){//not used yet
 		
 	}
-	public void disc(int channelNo){
+	public void disc(int channelNo){//not used yet
 		
 	}
 }
