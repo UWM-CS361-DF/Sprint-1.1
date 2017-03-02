@@ -1,6 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
 
+//******************************************************
+// The ChronoInterface class acts as a literal interface
+// for the ChronoTimer. This has all of the methods that
+// could be directly related to the interface buttons to 
+// generate a command.(i.e the tog "button" is pressed
+// it relates to tog() method. The chronoInterface then 
+// determines what to do with the information provided
+//******************************************************
+
 public class ChronoInterface {
 	public static ChronoInterface chronoTimer = new ChronoInterface();
 	List<Channel> channels = new ArrayList<Channel>(9);//0 will be an empty channel location for ease of assigning
@@ -9,8 +18,9 @@ public class ChronoInterface {
 	Event event = new IndEvent();
 	
 	public ChronoInterface(){
-		for(int i=0;i<9;i++){
-			channels.add(new Channel(i));
+		channels.add(0,null);
+		for(int i=1;i<9;i++){
+			channels.add(i,new Channel(i));
 		}
 		Time.systemTime.setTime();
 	}
