@@ -1,6 +1,9 @@
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
+/* This class is mainly about to set system time and get the race 
+ * time via subtracting. Also it transfer the format to fit to the 
+ * given units of time, which is "hundredth of seconds".
+ */
 public class Time {
 	public static Time systemTime = new Time();
 	String[] time;
